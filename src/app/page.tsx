@@ -1,95 +1,105 @@
+import {
+  Box,
+  Stack,
+  Input,
+  Text,
+  Flex,
+  HStack,
+  Field,
+  FieldRequiredIndicator,
+  Checkbox,
+  Button,
+  Link,
+} from "@chakra-ui/react";
+import Logo from "@/img/logo.png";
+import FrontPhoto from "@/img/building.jpg";
 import Image from "next/image";
-import styles from "./page.module.css";
+import { PasswordInput } from "@/components/ui/password-input";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    <Stack p={{md:"13rem"}} height={{md:"10vh"}}>
+      <HStack
+        bg={{ base: "green" }}
+        height={"5rem"}
+        align={"center"}
+        justify={"center"}
+      >
+        <Image src={Logo} alt="logo" height={{base:"95rem"}} width={50} />
+        <Text fontWeight={"bold"} color={"white"}>
+          eLogBook
+        </Text>
+      </HStack>
+      <Stack
+        height={100}
+        bgGradient="to-r"
+        gradientFrom="green.100"
+        gradientTo="green.300"
+        mt={-2}
+        mb={3}
+      >
+        <Image src={FrontPhoto} alt="frontPhoto" />
+        <Text
+          textTransform={{ base: "uppercase" }}
+          fontWeight={500}
+          px={{ base: "1.3rem" }}
+          color={{ base: "green.800" }}
+        >
+          this is the record book for our IT students in MR-soft
+        </Text>
+        <Text
+          fontWeight={"thin"}
+          fontSize={{ base: "0.7rem" }}
+          textTransform={"capitalize"}
+          textAlign={{ base: "center" }}
+        >
+          the window to fill your logBook is from 7am - 7pm
+        </Text>
+        <Stack px={{ base: "1.3rem" }} py={{base:"2rem"}} gap={{base:"0.9rem"}}>
+          <Field.Root required>
+            <Field.Label>
+              Email
+              <FieldRequiredIndicator />
+            </Field.Label>
+            <Input
+              placeholder="Enter your email."
+              variant="flushed"
+              css={{ "--error-color": "green" }}
             />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            <Field.HelperText>We'll never share your email.</Field.HelperText>
+            <Field.ErrorText>This field is required</Field.ErrorText>
+          </Field.Root>
+          <Field.Root>
+            <Field.Label>
+              Password <FieldRequiredIndicator />
+            </Field.Label>
+            <PasswordInput
+              variant="flushed"
+              css={{ "--error-color": "green" }}
+            />
+            <Field.HelperText>
+              We'll never share your password.
+            </Field.HelperText>
+            <Field.ErrorText>This field is required</Field.ErrorText>
+          </Field.Root>
+          <Flex gap={{base:"4rem"}}>
+            <Stack>
+              <Checkbox.Root>
+                <Checkbox.HiddenInput />
+                <Checkbox.Control bg={"green"}/>
+                <Checkbox.Label>Remember me</Checkbox.Label>
+              </Checkbox.Root>
+            </Stack>
+            <Stack>
+              <Link variant="underline" href="" fontSize={15} target="_blank">Forgot password?</Link>
+            </Stack>
+          </Flex>
+          <Flex gap={{base:"7.5rem"}} >
+          <Button variant="solid" width={{base:"6rem"}} bg="green">Login</Button>
+          <Button variant="outline" width={{base:"6rem"}} outlineColor={"green"}>Sign Up</Button>
+          </Flex>
+        </Stack>
+      </Stack>
+    </Stack>
   );
 }
