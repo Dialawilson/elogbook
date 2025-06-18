@@ -75,25 +75,25 @@ export default function Home() {
               Logbook submission window: 7am - 7pm
             </Text>
 
-            <Field.Root isRequired>
+            <Field.Root required>
               <Field.Label>
                 Email <FieldRequiredIndicator />
               </Field.Label>
               <Input
                 placeholder="Enter your email"
                 variant="flushed"
-                focusBorderColor="green.500"
+                // focusBorderColor="green.500"
               />
               <Field.HelperText>We'll never share your email.</Field.HelperText>
             </Field.Root>
 
-            <Field.Root isRequired>
+            <Field.Root required>
               <Field.Label>
                 Password <FieldRequiredIndicator />
               </Field.Label>
               <PasswordInput
                 variant="flushed"
-                focusBorderColor="green.500"
+                // focusBorderColor="green.500"
                 placeholder="Enter your password"
               />
               <Field.HelperText>

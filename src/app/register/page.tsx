@@ -42,7 +42,7 @@ export default function Register() {
             <Box
               position="relative"
               w="50%"
-              h="89vh"
+              h="90vh"
               overflow="hidden"
                border="2px solid red"
               bgGradient="linear(to-r, green.100, green.300"
@@ -106,12 +106,12 @@ export default function Register() {
               <Flex gap={10}>
                 <Field.Root required>
                   <Field.Label>
-                    Matriculation Number <FieldRequiredIndicator />
+                    Matriculation OR Registration  Number <FieldRequiredIndicator />
                   </Field.Label>
-                  <Input variant="flushed" placeholder="Mat Number" />
+                  <Input variant="flushed" placeholder="Mat OR Reg Number" />
                 </Field.Root>
 
-                <Field.Root>
+                <Field.Root >
                   <Select.Root
                     // key={variant}
                     collection={frameworks}
@@ -128,7 +128,7 @@ export default function Register() {
                     </Select.Control>
                     <Portal>
                       <Select.Positioner>
-                        <Select.Content variant="flushed">
+                        <Select.Content >
                           {frameworks.items.map((framework) => (
                             <Select.Item item={framework} key={framework.value}>
                               {framework.label}
