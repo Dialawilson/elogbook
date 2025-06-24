@@ -19,54 +19,62 @@ export default function SideBar() {
   return (
     <>
       <Flex direction="column" justifyItems="center">
-        <Box h="100vh" w="15rem" bgColor="green.50" justifyContent="center">
+        <Box h="100vh"  w="15rem" bgColor="green.50" justifyContent="center">
           <Box
             display="flex"
             h={39}
-            mt={15}
+            mt={20}
             gap={4}
             justifyContent="center"
             alignItems="center"
             flexDirection="row"
-            border="2px solid red"
+            borderBottom="1px solid gray"
+            
+
           >
             <Image src={Logo} alt="logo" width={70} />
 
             <Badge borderRadius={20}>Beta</Badge>
           </Box>
           <HStack
-            border="2px solid red"
-            mt={90}
+            // border="2px solid red"
             padding={20}
             flexDirection="column"
             textAlign="left"
             textTransform="capitalize"
           >
-            <Link>
-              <Flex gap={6}>
+            <Link my={3}  px="0.5rem" py="1rem" borderRadius="0.5rem" _hover={{
+                  bg:"green.300", textDecoration:"none"
+                }}>
+              <Flex gap={6}  alignItems="center" >
                 <Icon>
                   <FiGrid />
                 </Icon>
-                <Box textAlign="left" border="1px solid red" w="10rem">
+                <Box textAlign="left"  w="10rem" >
 
                 <Text>dashboard</Text>
                 </Box>
               </Flex>
             </Link>
 
-            <Link>
-              <Flex gap={6}>
+            <Link my={3} py="1rem"   px="0.5rem" borderRadius="0.5rem" _hover={{
+                  bg:"green.300", textDecoration:"none",
+                
+                }}>
+              <Flex gap={6} alignItems="center">
                 <Icon>
                   <FiFileText />
                 </Icon> 
-                <Box textAlign="left" w="10rem" border="1px solid red">
+                <Box textAlign="left" w="10rem" >
 
                 <Text>Add work details</Text>
                 </Box>
               </Flex>
             </Link>
-            <Link>
-              <Flex gap={6}>
+            <Link my={3} py="1rem"  px="0.5rem" borderRadius="0.5rem" _hover={{
+                  bg:"green.300", textDecoration:"none"
+                }}>
+              <Flex gap={6} alignItems="center">
                 <FiSend />
                 <Box textAlign="left" border="1px soild red" w="10rem">
 
@@ -74,11 +82,13 @@ export default function SideBar() {
                 </Box>
               </Flex>
             </Link>
-          <Stack justifyItems="center" justifyContent="center" mt="16rem">
+          <Stack py="1rem" justifyItems="center" justifyContent="center" mt="1rem" px="0.5rem" borderRadius="0.5rem" _hover={{
+                  bg:"green.300", textDecoration:"none"
+                }}>
             <Popover.Root>
               <Popover.Trigger asChild>
                 <Link>
-                  <Flex gap={6}>
+                  <Flex gap={6} alignItems="center">
 
                     <Icon>
                       <FaMaximize />
